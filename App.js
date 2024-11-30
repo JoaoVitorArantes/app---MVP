@@ -11,7 +11,7 @@ import ExercicioScreen from './screens/Exercicios';
 import JogoScreen from './screens/Jogos';
 import Ionicons from 'react-native-vector-icons/Ionicons'; // Para ícones
 import EscolherJogoScreen from './screens/EscolherJogoScreen';
-import selecionarScreen from './screens/SelecaoExercicio';
+import SelecionarScreen from './screens/SelecaoExercicio';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -32,9 +32,8 @@ function MainTabs() {
             iconName = 'layers-outline';
           } else if (route.name === 'Module') {
             iconName = 'book-outline';
-          }else if (route.name === 'Exercicin') {
-              iconName = 'layers-outline';
-          } else if (route.name === 'Exercise') {
+
+          } else if (route.name === 'Exercicio') {
             iconName = 'create-outline';
           } else if (route.name === 'Jogos') {
             iconName = 'game-controller-outline';
@@ -50,8 +49,8 @@ function MainTabs() {
       <Tab.Screen name="SignUp" component={CadastroScreen} options={{ title: 'Criar Conta' }} />
       <Tab.Screen name="SelectLevel" component={NivelScreen} options={{ title: 'Seleção de Nível' }} />
       <Tab.Screen name="Module" component={ModuloScreen} options={{ title: 'Módulo de Conteúdo' }} />
-      <Tab.Screen name="Exercicin" component={selecionarScreen} options={{ title: 'Seleção de Exercícios' }} />
-      <Tab.Screen name="Exercise" component={ExercicioScreen} options={{ title: 'Exercícios' }} />
+
+      <Tab.Screen name="Exercicios" component={SelecionarScreen} options={{ title: 'Exercícios' }} />
       <Tab.Screen name="Jogos" component={EscolherJogoScreen} options={{ title: 'Jogos' }} />
     </Tab.Navigator>
   );

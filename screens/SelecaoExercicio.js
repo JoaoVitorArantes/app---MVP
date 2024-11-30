@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 //import ExercicioScreen from './screens/Exercicios';
 
-export default function selecionarScreen({ navigation }) {
+export default function SelecionarScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Qual tópico você deseja aprender?</Text>

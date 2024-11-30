@@ -30,8 +30,12 @@ const JogoScreen = () => {
   const [cards, setCards] = useState(shuffleArray(cardsData));
   const [flippedCards, setFlippedCards] = useState([]);
   const [matchedCards, setMatchedCards] = useState([]);
+  const [initial, setInitial] = useState(true)
 
   useEffect(() => {
+    if(initial == true) {
+        setTimeout(() => setInitial(false), 2000)
+    }
     if (flippedCards.length === 2) {
       // Verifica se o valor dos cartões virados combina
       if (flippedCards[0].value === flippedCards[1].value) {
@@ -57,7 +61,7 @@ const JogoScreen = () => {
         style={[styles.card, isFlipped || isMatched ? styles.flipped : null]}
         onPress={() => handleCardPress(item)}
       >
-        <Text style={styles.cardText}>{isFlipped || isMatched ? item.value : '?'}</Text>
+        <Text style={styles.cardText}>{isFlipped || isMatched || initial ? item.value : '?'}</Text>
       </TouchableOpacity>
     );
   };
